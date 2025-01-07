@@ -31,6 +31,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run tests
         run: pytest --alluredir=allure-results
+        continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
         with:
@@ -40,7 +41,7 @@ jobs:
 
   generate-report:
     runs-on: ubuntu-24.04
-    # needs: run-tests
+    needs: run-tests
     name: Generate report
     steps:
       - uses: actions/setup-java@v3
@@ -60,7 +61,7 @@ jobs:
 
   deploy-report:
     runs-on: ubuntu-24.04
-    # needs: generate-report
+    needs: generate-report
     name: Deploy report
     steps:
       - name: Download all workflow run artifacts
