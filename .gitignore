@@ -1,4 +1,8 @@
-allure-report/
-.DS_Store
-__pycache__/
+.env
+env
+.venv
+venv
+__pycache__
 .pytest_cache
+allure-results
+allure-report

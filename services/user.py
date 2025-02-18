@@ -16,13 +16,26 @@ class UserService(BaseService):
         self.params = UserParams()
 
     @allure.step("Create user")
-    def create_user(self, username, firstName, lastName, email, password,
-                    phone):
+    def create_user(
+        self,
+        username,
+        firstName,
+        lastName,
+        email,
+        password,
+        phone
+    ):
         self.response = requests.post(
             headers=self.headers.headers,
             url=self.endpoints.create_user,
-            json=self.payloads.create_user(username, firstName, lastName,
-                                           email, password, phone)
+            json=self.payloads.create_user(
+                username,
+                firstName,
+                lastName,
+                email,
+                password,
+                phone
+            )
         )
 
     @allure.step("Get user")

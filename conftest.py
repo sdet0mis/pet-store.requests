@@ -9,9 +9,14 @@ from tests.base_test import fake
 @allure.step("Some user")
 @pytest.fixture()
 def some_user():
-    payloads = UserPayloads().create_user(fake.user_name(), fake.first_name(),
-                                          fake.last_name(), fake.email(),
-                                          fake.password(), fake.phone_number())
+    payloads = UserPayloads().create_user(
+        fake.user_name(),
+        fake.first_name(),
+        fake.last_name(),
+        fake.email(),
+        fake.password(),
+        fake.phone_number()
+    )
     UserService().create_user(**payloads)
     model = UserService().get_user(payloads["username"])
     yield {"payloads": payloads, "model": model}
