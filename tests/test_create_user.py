@@ -95,7 +95,7 @@ class TestCreateUser(BaseTest):
             (
                 fake.user_name(),
                 fake.pybool(),
-                fake.fake.last_name(),
+                fake.last_name(),
                 fake.email(),
                 fake.password(),
                 fake.phone_number()
