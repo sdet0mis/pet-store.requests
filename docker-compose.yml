@@ -1,6 +1,6 @@
 services:
   test:
-    image: test_pet_store_api
+    image: pet-store.requests
     build:
       context: .
       dockerfile: Dockerfile

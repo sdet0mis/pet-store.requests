@@ -1,4 +1,4 @@
 - open last report:\
-[qa101mis.github.io/pet-store.requests](https://qa101mis.github.io/pet-store.requests/)
+[allure-report](https://sdet0mis.github.io/pet-store.requests/)
 - run tests and generate report:\
-```docker-compose up```
+```docker compose up```
